@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import { ShopContext } from "../context/shopContext";
 
 
 
 const CartItem = () =>{
+
+    const {cart} = useContext(ShopContext);
 
     return(
         <>
@@ -22,7 +26,10 @@ const CartItem = () =>{
                     <p className="text-sm text-gray-700">IVA Incluido</p>
                 </div>
             </div>
-            <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+            <button
+            disabled={cart.length > 0 ? false : true}
+            className={`mt-6 w-full rounded-md ${cart.length > 0 ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-500 hover:bg-gray-600"} py-1.5 font-medium text-blue-50 `}>Check out</button>
+            
         </div>
         
 

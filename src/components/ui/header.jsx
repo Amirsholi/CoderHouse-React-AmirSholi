@@ -22,10 +22,10 @@ const links = [
 const Header = () => {
 
     return (
-        <header className="w-full bg-blue-500 font-roboto">
+        <header className="w-full bg-[#151515] font-roboto">
             <div className="contenedor py-2 flex justify-between items-center">
             <Link to="/">
-            <h1 className="font-satisfy text-3xl ">Farmacia Vitória</h1>
+            <h1 className="font-satisfy text-3xl text-gray-50">Farmacia Vitória</h1>
             </Link>
 
                 <nav className="flex justify-between gap-2">

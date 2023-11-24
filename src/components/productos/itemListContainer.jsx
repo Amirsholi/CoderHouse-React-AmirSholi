@@ -28,23 +28,23 @@ const ItemListContainter =  () => {
 
 
     return (
-        <div className="w-full max-w-[1200px] mx-auto px-4 font-quicksand">
+        <div className="contenedor font-quicksand bg-white border shadow-2xl mt-10">
             <div className="flex w-full gap-4">                
 
                 <div className="w-[15%] flex flex-col gap-2 p-2" onClick={getProducts}>
                     <CategoriesMenu /> 
                 </div>
 
-                <div className="flex-1 p-2">
+                <div className="flex-1 p-2 mb-8">
 
                 {
                     
                 categoryName === "vitaminas" ? 
 
-                <h1>No hay {categoryName}</h1> :
+                <h1 className="text-center text-3xl my-32">No hay {categoryName}</h1> :
 
                 <ItemList items={categoryName == "todos" ? products : 
-                products.filter((product) => product.categoryId == `${categoryName}`)} cart={false}/> 
+                products.filter((product) => product.categoryId == `${categoryName}`)} cartFlag={false}/> 
 
                 }
                     

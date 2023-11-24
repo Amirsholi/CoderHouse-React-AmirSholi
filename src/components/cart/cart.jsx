@@ -3,7 +3,7 @@ import { ShopContext } from "../context/shopContext";
 import ItemList from "../productos/itemList";
 import CartItem from "./cartItem";
 import { Link } from "react-router-dom";
-import Boton from "../ui/boton";
+import EmptyCart from "./emptyCart";
 
 
 
@@ -14,12 +14,15 @@ const Cart = () => {
 
     return(
         <>
-        <div className="contenedor flex flex-row-reverse w-full gap-3 mt-3">
-            <div className=" w-[20%] ">
-                {cart.length > 0 ? <CartItem/> : <Link to={"/category/todos"}><Boton>Llenar Carrito</Boton></Link>}
-            </div>
+        <div className="contenedor flex flex-row-reverse font-quicksand bg-white border shadow-2xl p-5 mt-10 gap-4">
+            
+                <div className=" w-[20%] h-[325px]"> <CartItem/> </div> 
+            
             <div className="flex-1 p-2">
-                <ItemList items={cart} cart={true}/>
+            {cart.length > 0 ?
+                <ItemList items={cart} cartFlag={true}/>
+                :
+                <Link className="bg-red-200 " to={"/category/todos"}><EmptyCart/></Link>}
             </div>
         </div>
         </>

@@ -13,11 +13,11 @@ function App() {
 
 
   return (
-    <>
+      <>
+
     <ShopComponentContext>
       <BrowserRouter>
         <Header/>
-
         <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/cart" element={<Cart/>}/>
@@ -26,6 +26,7 @@ function App() {
         </Routes>
       </BrowserRouter>  
     </ShopComponentContext>
+
     </>
   )
 }
